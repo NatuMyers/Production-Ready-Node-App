@@ -3,6 +3,7 @@
     "start": "node ./bin/www"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
     "babel-preset-node5": "^11.0.2",
     "babel-register": "^6.8.0",
     "eslint-config-standard": "^5.3.1",
@@ -10,5 +11,10 @@
     "eslint-config-standard-react": "^2.4.0",
     "eslint-plugin-react": "^5.0.1",
     "express": "^4.13.4"
+  },
+  "dependencies": {
+    "mysql": "^2.10.2",
+    "sequelize": "^3.22.0",
+    "sequelize-connect": "^1.2.2"
   }
 }

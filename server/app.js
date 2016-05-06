@@ -2,13 +2,18 @@
 
 import express from 'express'
 
-const app = express()
+import db from 'sequelize-connect'
 
-app.get('*', function (req, res) {
+async function connect () {
+    await db.connect('rt_schema', 'root', 'strongpassword')
+}
 
-    res.send('hello')
+// after your promise comes back, you do this
+(async function () {
+    await connect()
+    const app = express()
 
-})
+    const port = 3000
+    app.listen(port, () => console.log(`Running on ${port}`) )
 
-const port = 3000
-app.listen(port, () => console.log(`Running on ${port}`) )
+})()
