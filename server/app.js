@@ -10,6 +10,15 @@ async function connect () {
 
 // after your promise comes back, you do this
 (async function () {
+    try {
+        
+        await connect()
+
+    } catch (err) {
+
+	console.log(`An error occured when connecting: ${err} `)
+
+    }
     await connect()
     const app = express()
 
